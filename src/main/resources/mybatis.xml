@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="C:\Users\user\Desktop\mysql-connector-java-8.0.15.jar" />
+	<context id="context1">
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/parttime_job_management?serverTimezone=GMT%2B8"
+			userId="root" password="root" />
+		<javaModelGenerator
+			targetPackage="cn.edu.neusoft.parttime.model"
+			targetProject="parttime" />
+		<sqlMapGenerator
+			targetPackage="cn.edu.neusoft.parttime.mapper"
+			targetProject="parttime" />
+		<javaClientGenerator
+			targetPackage="cn.edu.neusoft.parttime.dao" targetProject="parttime"
+			type="XMLMAPPER" />
+		<!--对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
+		<table schema="parttime_job_management" tableName="tutor_management"
+			domainObjectName="TutorManagement" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table schema="parttime_job_management" tableName="supermarket_management"
+			domainObjectName="SupermarketManagement" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table schema="parttime_job_management" tableName="repast_management"
+			domainObjectName="RepastManagement" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table schema="parttime_job_management" tableName="flyer_management"
+			domainObjectName="FlyerManagement" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+
+	</context>
+
+
+</generatorConfiguration>

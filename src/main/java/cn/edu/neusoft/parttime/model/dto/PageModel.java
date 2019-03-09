@@ -1,7 +1,7 @@
 /**
  * 
  */
-package taiyi.web.model.dto;
+package cn.edu.neusoft.parttime.model.dto;
 
 import java.util.HashMap;
 

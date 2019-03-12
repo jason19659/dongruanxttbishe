@@ -23,14 +23,14 @@ import cn.edu.neusoft.parttime.service.SupermarketManagementService;
 public class SupermarketManagementServiceImpl implements SupermarketManagementService{
 	
 	@Autowired
-	private SupermarketManagementMapper SupermarketManagementMapper;
+	private SupermarketManagementMapper supermarketManagementMapper;
 
 	/* 
 	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectAll()
 	 */
 	@Override
 	public List<SupermarketManagement> selectAll() {
-		return SupermarketManagementMapper.selectAll();
+		return supermarketManagementMapper.selectAll();
 	}
 
 	/* 
@@ -38,7 +38,7 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
-		return SupermarketManagementMapper.deleteByPrimaryKey(id);
+		return supermarketManagementMapper.deleteByPrimaryKey(id);
 	}
 
 	/* 
@@ -46,7 +46,7 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public int insert(SupermarketManagement record) {
-		return SupermarketManagementMapper.insert(record);
+		return supermarketManagementMapper.insert(record);
 	}
 
 	/* 
@@ -54,7 +54,7 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public int insertSelective(SupermarketManagement record) {
-		return SupermarketManagementMapper.insertSelective(record);
+		return supermarketManagementMapper.insertSelective(record);
 	}
 
 	/* 
@@ -62,7 +62,7 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public SupermarketManagement selectByPrimaryKey(Integer id) {
-		return SupermarketManagementMapper.selectByPrimaryKey(id);
+		return supermarketManagementMapper.selectByPrimaryKey(id);
 	}
 
 	/* 
@@ -70,7 +70,7 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public int updateByPrimaryKeySelective(SupermarketManagement record) {
-		return SupermarketManagementMapper.updateByPrimaryKeySelective(record);
+		return supermarketManagementMapper.updateByPrimaryKeySelective(record);
 	}
 
 	/* 
@@ -78,7 +78,15 @@ public class SupermarketManagementServiceImpl implements SupermarketManagementSe
 	 */
 	@Override
 	public int updateByPrimaryKey(SupermarketManagement record) {
-		return SupermarketManagementMapper.updateByPrimaryKey(record);
+		return supermarketManagementMapper.updateByPrimaryKey(record);
+	}
+
+	/* 
+	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectLatest(java.lang.Integer)
+	 */
+	@Override
+	public List<SupermarketManagement> selectLatest(int number) {
+		return supermarketManagementMapper.selectLatest(number);
 	}
 
 }

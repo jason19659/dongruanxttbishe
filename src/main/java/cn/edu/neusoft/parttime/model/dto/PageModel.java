@@ -6,11 +6,8 @@ package cn.edu.neusoft.parttime.model.dto;
 import java.util.HashMap;
 
 /**
- * @author <a href="mailto:jason19659@163.com">jason19659</a>
  *
- * taiyi.web.model.dto
  *
- * 2016年3月21日
  */
 public class PageModel {
 	private HashMap<String, Object> maps = new HashMap<String, Object>();

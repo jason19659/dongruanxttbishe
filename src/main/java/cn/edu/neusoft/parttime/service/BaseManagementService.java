@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface BaseManagementService<T> {
 	
+	List<T> selectLatest(int number);
+	
 	List<T> selectAll();
 
 	int deleteByPrimaryKey(Integer id);

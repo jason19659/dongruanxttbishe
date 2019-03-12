@@ -23,14 +23,14 @@ import cn.edu.neusoft.parttime.service.RepastManagementService;
 public class RepastManagementServiceImpl implements RepastManagementService {
 	
 	@Autowired
-	private RepastManagementMapper RepastManagementMapper;
+	private RepastManagementMapper repastManagementMapper;
 
 	/* 
 	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectAll()
 	 */
 	@Override
 	public List<RepastManagement> selectAll() {
-		return RepastManagementMapper.selectAll();
+		return repastManagementMapper.selectAll();
 	}
 
 	/* 
@@ -38,7 +38,7 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
-		return RepastManagementMapper.deleteByPrimaryKey(id);
+		return repastManagementMapper.deleteByPrimaryKey(id);
 	}
 
 	/* 
@@ -46,7 +46,7 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public int insert(RepastManagement record) {
-		return RepastManagementMapper.insert(record);
+		return repastManagementMapper.insert(record);
 	}
 
 	/* 
@@ -54,7 +54,7 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public int insertSelective(RepastManagement record) {
-		return RepastManagementMapper.insertSelective(record);
+		return repastManagementMapper.insertSelective(record);
 	}
 
 	/* 
@@ -62,7 +62,7 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public RepastManagement selectByPrimaryKey(Integer id) {
-		return RepastManagementMapper.selectByPrimaryKey(id);
+		return repastManagementMapper.selectByPrimaryKey(id);
 	}
 
 	/* 
@@ -70,7 +70,7 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public int updateByPrimaryKeySelective(RepastManagement record) {
-		return RepastManagementMapper.updateByPrimaryKeySelective(record);
+		return repastManagementMapper.updateByPrimaryKeySelective(record);
 	}
 
 	/* 
@@ -78,7 +78,15 @@ public class RepastManagementServiceImpl implements RepastManagementService {
 	 */
 	@Override
 	public int updateByPrimaryKey(RepastManagement record) {
-		return RepastManagementMapper.updateByPrimaryKey(record);
+		return repastManagementMapper.updateByPrimaryKey(record);
+	}
+
+	/* 
+	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectLatest(java.lang.Integer)
+	 */
+	@Override
+	public List<RepastManagement> selectLatest(int number) {
+		return repastManagementMapper.selectLatest(number);
 	}
 
 }

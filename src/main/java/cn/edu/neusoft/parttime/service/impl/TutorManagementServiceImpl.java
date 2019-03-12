@@ -23,14 +23,14 @@ import cn.edu.neusoft.parttime.service.TutorManagementService;
 public class TutorManagementServiceImpl implements TutorManagementService{
 	
 	@Autowired
-	private TutorManagementMapper TutorManagementMapper;
+	private TutorManagementMapper tutorManagementMapper;
 
 	/* 
 	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectAll()
 	 */
 	@Override
 	public List<TutorManagement> selectAll() {
-		return TutorManagementMapper.selectAll();
+		return tutorManagementMapper.selectAll();
 	}
 
 	/* 
@@ -38,7 +38,7 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
-		return TutorManagementMapper.deleteByPrimaryKey(id);
+		return tutorManagementMapper.deleteByPrimaryKey(id);
 	}
 
 	/* 
@@ -46,7 +46,7 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public int insert(TutorManagement record) {
-		return TutorManagementMapper.insert(record);
+		return tutorManagementMapper.insert(record);
 	}
 
 	/* 
@@ -54,7 +54,7 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public int insertSelective(TutorManagement record) {
-		return TutorManagementMapper.insertSelective(record);
+		return tutorManagementMapper.insertSelective(record);
 	}
 
 	/* 
@@ -62,7 +62,7 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public TutorManagement selectByPrimaryKey(Integer id) {
-		return TutorManagementMapper.selectByPrimaryKey(id);
+		return tutorManagementMapper.selectByPrimaryKey(id);
 	}
 
 	/* 
@@ -70,7 +70,7 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public int updateByPrimaryKeySelective(TutorManagement record) {
-		return TutorManagementMapper.updateByPrimaryKeySelective(record);
+		return tutorManagementMapper.updateByPrimaryKeySelective(record);
 	}
 
 	/* 
@@ -78,7 +78,15 @@ public class TutorManagementServiceImpl implements TutorManagementService{
 	 */
 	@Override
 	public int updateByPrimaryKey(TutorManagement record) {
-		return TutorManagementMapper.updateByPrimaryKey(record);
+		return tutorManagementMapper.updateByPrimaryKey(record);
+	}
+
+	/* 
+	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectLatest(java.lang.Integer)
+	 */
+	@Override
+	public List<TutorManagement> selectLatest(int number) {
+		return tutorManagementMapper.selectLatest(number);
 	}
 
 }

@@ -5,7 +5,8 @@ import java.util.List;
 import cn.edu.neusoft.parttime.model.RepastManagement;
 
 public interface RepastManagementMapper {
-	
+	List<RepastManagement> selectLatest(int number);
+	 
 	List<RepastManagement> selectAll();
 	
     /**

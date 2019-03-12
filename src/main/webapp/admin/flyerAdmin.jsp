@@ -116,7 +116,8 @@
 		<thead>
 			<tr>
 				<th hidden="true" field="id">id</th>
-				<th field="name">名称</th>
+				<th field="name">公司名</th>
+				<th field="title">标题</th>
 				<th field="phone">电话</th>
 				<th field="address">地址</th>
 				<th field="requirement">详细要求</th>
@@ -136,13 +137,16 @@
 	</div>
 
 	<div id="dlg" class="easyui-dialog"
-		style="width: 400px; height: 355px; padding: 10px 20px" closed="true"
+		style="width: 400px; height: 380px; padding: 10px 20px" closed="true"
 		buttons="#dlg-buttons">
 		<div class="ftitle">兼职信息:</div>
 		<form id="fm" method="post">
 			<input hidden="true" name="id"></input>
 			<div class="fitem">
 				<label>名称:</label> <input name="name">
+			</div>
+			<div class="fitem">
+				<label>标题:</label> <input name="title">
 			</div>
 			<div class="fitem">
 				<label>电话:</label> <input name="phone">

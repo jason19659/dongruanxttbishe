@@ -81,4 +81,12 @@ public class FlyerManagementServiceImpl implements FlyerManagementService {
 		return flyerManagementMapper.updateByPrimaryKey(record);
 	}
 
+	/* 
+	 * @see cn.edu.neusoft.parttime.service.BaseManagementService#selectLatest(java.lang.Integer)
+	 */
+	@Override
+	public List<FlyerManagement> selectLatest(int number) {
+		return flyerManagementMapper.selectLatest(number);
+	}
+
 }

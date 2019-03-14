@@ -3,6 +3,8 @@
  */
 package cn.edu.neusoft.parttime.controller.api;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import cn.edu.neusoft.parttime.service.FlyerManagementService;
 import cn.edu.neusoft.parttime.service.RepastManagementService;
 import cn.edu.neusoft.parttime.service.SupermarketManagementService;
 import cn.edu.neusoft.parttime.service.TutorManagementService;
+import cn.edu.neusoft.parttime.service.WebService;
 
 /**
  *
@@ -32,6 +35,9 @@ public class TestController {
 	private FlyerManagementService flyerManagementService;
 	@Autowired
 	private SupermarketManagementService  supermarketManagementService;
+	@Autowired
+	private WebService  webService;
+	
 	@RequestMapping("/test")
 	@ResponseBody
 	public TreeMap<String, Object> test() {
@@ -41,5 +47,12 @@ public class TestController {
 		maps.put("3",flyerManagementService.selectLatest(5));
 		maps.put("4",supermarketManagementService.selectLatest(5));
 		return maps;
+	}
+	
+	@RequestMapping("/test2")
+	@ResponseBody
+	public List<HashMap<String, Object>> test2() {
+		List<HashMap<String, Object>> selectTopAll = webService.selectTopAll(20);
+		return selectTopAll;
 	}
 }

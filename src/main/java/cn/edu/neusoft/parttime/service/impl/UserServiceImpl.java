@@ -26,7 +26,7 @@ import cn.edu.neusoft.parttime.service.UserService;
 @Service
 @Transactional
 
-public class UsreServiceImpl implements UserService{
+public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserMapper userMapper;
 	
@@ -123,6 +123,19 @@ public class UsreServiceImpl implements UserService{
 	@Override
 	public User selectByUsername(String username) {
 		return userMapper.selectByUsername(username);
+	}
+
+	/* 
+	 * @see cn.edu.neusoft.parttime.service.UserService#login(java.lang.String, java.lang.String)
+	 */
+	@Override
+	public User login(String username, String password) {
+		User selectByUsername = selectByUsername(username);
+		String md5Password = DigestUtils.md5Hex(password);
+		if (selectByUsername.getPassword().equals(md5Password) ) {
+			return selectByUsername;
+		}
+		return null;
 	}
 
 }

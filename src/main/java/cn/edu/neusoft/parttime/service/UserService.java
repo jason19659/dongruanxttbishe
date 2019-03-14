@@ -32,4 +32,6 @@ public interface UserService {
 	int updateByPrimaryKey(User record);
 	
 	User selectByUsername(String username);
+
+	User login(String username, String password);
 }

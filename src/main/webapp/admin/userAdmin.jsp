@@ -9,6 +9,7 @@
 %>
 <html>
 <head>
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>用户管理</title>
 
@@ -28,7 +29,7 @@
 <!--Icon引入-->
 
 <script language="JavaScript" type="text/javascript"
-	src="${basePath}js/easyui-lang-zh_CN.js"></script>
+	src="${basePath}js/easyui-lang-zh_CN.js"  charset="UTF-8"></script>
 <script type="text/javascript">
 	$(function() {
 		$('#dg').datagrid({

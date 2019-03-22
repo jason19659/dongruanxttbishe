@@ -10,6 +10,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8" />
     <link href="${basePath }css/style.css" rel="stylesheet">
     <title>职位详情</title>
 

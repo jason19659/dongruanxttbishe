@@ -17,7 +17,8 @@
 <link rel="stylesheet" type="text/css" href="${basePath}css/easyui.css" />
 <link rel="stylesheet" type="text/css" href="${basePath}css/icon.css" />
 <script language="JavaScript" type="text/javascript"
-	src="${basePath}js/util.js"></script>
+	src="${basePath}js/util.js" charset="UTF-8"></script>
+	<meta charset="utf-8" />
 <style>
 * {
 	font-size: 12px;

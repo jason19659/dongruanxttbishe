@@ -26,9 +26,9 @@
 <!--引入CSS样式-->
 <link rel="stylesheet" type="text/css" href="${basePath}css/icon.css">
 <!--Icon引入-->
-
+<meta charset="utf-8" />
 <script language="JavaScript" type="text/javascript"
-	src="${basePath}js/easyui-lang-zh_CN.js"></script>
+	src="${basePath}js/easyui-lang-zh_CN.js"  charset="UTF-8"></script>
 <script type="text/javascript">
 	$(function() {
 		$('#dg').datagrid({

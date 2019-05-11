@@ -43,4 +43,10 @@ public class AdminController {
 	public String userAdminFront() {
 		return "admin/userAdmin";
 	}
+	
+	@RequestMapping("/resumeAdminFront")
+	public String resumeAdminFront() {
+		return "admin/resumeAdmin";
+	}
+	
 }

@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>简历查看</title>
+<title>传单兼职管理</title>
 
 
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
 	$(function() {
 		$('#dg').datagrid({
-			url : '${basePath}admin/getAllResume',
+			url : '${basePath}admin/getAllResume', 
 			pageSize : 20
 		})
 	});
@@ -117,18 +117,21 @@
 			<tr>
 				<th hidden="true" field="id">id</th>
 				<th field="name">姓名</th>
-				<th field="title">标题</th>
+				<th field="gender">性别</th>
 				<th field="phone">电话</th>
-				<th field="address">地址</th>
-				<th field="requirement">详细要求</th>
-				<th field="personCount">需求人数</th>
-				<th field="pubDate">发布日期</th>
-				<th field="salary">薪资</th>
+				<th field="email">邮箱</th>
+				<th field="profile">简历</th>
+				<th field="jobType">兼职类别</th>
+				<th field="jobId">兼职条目id</th>
 			</tr>
 		</thead>
 	</table>
 	<div id="toolbar">
-		<a href="#" class="easyui-linkbutton"
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"
+			onclick="newItem()">增加兼职</a> <a href="#" class="easyui-linkbutton"
+			iconCls="icon-edit" plain="true" onclick="editItem()">修改兼职</a> <a
+			href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true"
+			onclick="destroyItem()">删除</a> <a href="#" class="easyui-linkbutton"
 			iconCls="icon-back" plain="true" onclick="history.go(-1)">返回</a>
 	</div>
 

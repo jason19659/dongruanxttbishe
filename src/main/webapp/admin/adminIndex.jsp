@@ -233,7 +233,12 @@ a:hover {
 					"menuname" : "用户管理",
 					"icon" : "icon-nav",
 					"url" : "${basePath}admin/userAdminFront"
-				} ]
+				} ,{
+					"menuid" : "105",
+					"menuname" : "简历查看",
+					"icon" : "icon-nav",
+					"url" : "${basePath}admin/resumeAdminFront"
+				}]
 			}]
 		}; 
    

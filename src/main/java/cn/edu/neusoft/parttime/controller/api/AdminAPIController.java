@@ -19,6 +19,7 @@ import com.github.pagehelper.PageInfo;
 
 import cn.edu.neusoft.parttime.model.FlyerManagement;
 import cn.edu.neusoft.parttime.model.RepastManagement;
+import cn.edu.neusoft.parttime.model.Resume;
 import cn.edu.neusoft.parttime.model.SupermarketManagement;
 import cn.edu.neusoft.parttime.model.TutorManagement;
 import cn.edu.neusoft.parttime.model.User;
@@ -26,6 +27,7 @@ import cn.edu.neusoft.parttime.model.dto.PageModel;
 import cn.edu.neusoft.parttime.model.dto.Status;
 import cn.edu.neusoft.parttime.service.FlyerManagementService;
 import cn.edu.neusoft.parttime.service.RepastManagementService;
+import cn.edu.neusoft.parttime.service.ResumeService;
 import cn.edu.neusoft.parttime.service.SupermarketManagementService;
 import cn.edu.neusoft.parttime.service.TutorManagementService;
 import cn.edu.neusoft.parttime.service.UserService;
@@ -51,6 +53,8 @@ public class AdminAPIController extends APIExceptionHandlerController {
 	private SupermarketManagementService  supermarketManagementService;
 	@Autowired
 	private UserService  userService;
+	@Autowired
+	private ResumeService  resumeService;
 
 	@RequestMapping("/saveOrEditRepast")
 	@ResponseBody
@@ -231,7 +235,18 @@ public class AdminAPIController extends APIExceptionHandlerController {
 	}
 	
 	
-
+	@RequestMapping("/getAllResume")
+	@ResponseBody
+	public HashMap<String, Object> getAllResume(@RequestParam(required = false) Integer page,
+			@RequestParam(required = false) Integer rows) {
+		if (page != null && rows != null) {
+			PageHelper.startPage(page, rows);
+		}
+		List<Resume> resumes = resumeService.selectAll();
+		PageInfo<Resume> pageinfo = new PageInfo<Resume>(resumes);
+		PageModel pageModel = new PageModel(pageinfo.getTotal(), resumes);
+		return pageModel.get();
+	}
 
 
 }

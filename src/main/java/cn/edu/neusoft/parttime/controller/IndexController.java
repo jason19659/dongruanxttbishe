@@ -3,6 +3,7 @@
  */
 package cn.edu.neusoft.parttime.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,18 +16,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import cn.edu.neusoft.parttime.model.FlyerManagement;
 import cn.edu.neusoft.parttime.model.RepastManagement;
+import cn.edu.neusoft.parttime.model.Resume;
 import cn.edu.neusoft.parttime.model.SupermarketManagement;
 import cn.edu.neusoft.parttime.model.TutorManagement;
 import cn.edu.neusoft.parttime.model.User;
 import cn.edu.neusoft.parttime.model.dto.PageModel;
 import cn.edu.neusoft.parttime.service.FlyerManagementService;
 import cn.edu.neusoft.parttime.service.RepastManagementService;
+import cn.edu.neusoft.parttime.service.ResumeService;
 import cn.edu.neusoft.parttime.service.SupermarketManagementService;
 import cn.edu.neusoft.parttime.service.TutorManagementService;
 import cn.edu.neusoft.parttime.service.UserService;
@@ -51,10 +55,14 @@ public class IndexController {
 	private WebService webService;
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ResumeService resumeService;
 
 	@RequestMapping({ "/index", "/" })
 	public String index(HttpServletRequest request) {
 		List<HashMap<String, Object>> selectTopAll = webService.selectTopAll(20);
+		String jsonString = JSON.toJSONString(selectTopAll);
+		System.out.println(jsonString);
 		request.setAttribute("data", selectTopAll);
 		return "index";
 	}
@@ -153,4 +161,18 @@ public class IndexController {
 		request.setAttribute("errMsg", null);
 		return "redirect:index";
 	}
+	
+	@RequestMapping("/submitResume")
+	public String submitResume(Resume resume) {
+		resume.setId(null);
+		resume.setPubDate(new Date());
+		resumeService.insert(resume);
+		
+		
+		
+		
+		return "redirect:index";
+	}
+	
+	
 }

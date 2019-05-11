@@ -164,7 +164,7 @@
 				<div class="col-md-9 clearfix">
 					<div id="footer-links">
 						<ul class="reset-list">
-							<li>© 2019</li>
+							<li>Dalian Neusoft University of Information© 2019</li>
 
 						</ul>
 					</div>
